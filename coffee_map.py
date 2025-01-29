@@ -42,7 +42,6 @@ def main():
 
     user_address_coords = fetch_coordinates(apikey, user_address)
     user_address_coords = (user_address_coords[1], user_address_coords[0])
-    print(f"Ваши координаты: {user_address_coords}")
 
     coffee_shops_info = []
     for coffee_shop in coffee_shops:
@@ -57,7 +56,6 @@ def main():
 
     coffee_shops_sorted_distance = sorted(coffee_shops_info, key=get_coffee_shop_distance)
     nearest_coffee_shops = coffee_shops_sorted_distance[:5]
-    pprint(nearest_coffee_shops)
 
     m = folium.Map(list(user_address_coords), zoom_start=12)
 
